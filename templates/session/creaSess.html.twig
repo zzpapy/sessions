@@ -1,0 +1,9 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Nouvelle session{% endblock %}
+
+{% block body %}
+{{form_start(form)}}
+{{form_row(form.nomSess)}}
+{{form_end(form)}}
+{% endblock %}

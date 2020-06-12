@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Détail{% endblock %}
+
+{% block body %}
+<div class="uk-child-width-1-2@s" uk-grid>
+    <div class="uk-card uk-card-default">
+        <h3 class="uk-card-title">{{stagiaire.nomStag}}</h3>
+        <table class="uk-table uk-table-small uk-table-divider">
+            <thead>
+                <tr>
+                    <th class="uk-table-shrink">Session</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for session in stagiaire.sessions  %}
+                <tr>
+                    <td class="uk-table-link">
+                        <a class="uk-link-reset" href="{{path('detailStag',{id:session.id})}}">{{session.nomSess}}</a>
+                    </td>                    
+                </tr>                
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

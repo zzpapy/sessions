@@ -1,0 +1,36 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Espace stagiaires{% endblock %}
+{% block nav %}
+    {{ parent()}}
+    <li class=""><a href="{{path('creaStag')}}">Nouveau stagiaire</a></li>
+{% endblock %}
+{% block body %}
+<div class="uk-overflow-auto">
+    <table class="uk-table uk-table-small uk-table-divider">
+        <thead>
+            <tr>
+                <th class="uk-table-shrink">Nom</th>
+                <th class="uk-table-shrink">Modif</th>
+                <th class="uk-table-shrink">Supprimer</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for stagiaire in stagiaires  %}
+            <tr>
+                <td class="uk-table-link">
+                    <a class="uk-link-reset" href="{{path('detailStag',{id:stagiaire.id})}}">{{stagiaire.nomStag}}</a>
+                </td>
+                <td>
+                    <a href="{{path('modifStag',{id:stagiaire.id})}}">Modif</a>
+                </td>
+                <td>
+                    <a href="{{path('delStag',{id:stagiaire.id})}}">Supprimer</a>
+                </td>
+                
+            </tr>                
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}

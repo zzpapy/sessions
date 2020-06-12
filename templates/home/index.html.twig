@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block body %}
+<div class="uk-flex uk-flex-around">
+    <a href="{{path('stagiaire')}}">
+    <div class="uk-card uk-card-default uk-card-body">
+        Espace stagiaires
+    </div>
+    </a>
+    <a href="{{path('session')}}">
+    <div class="uk-card uk-card-default uk-card-body">
+        Espace sessions
+    </div>
+    </a>
+</div>
+{% endblock %}
